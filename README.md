@@ -31,7 +31,49 @@ Configurar las credenciales en application.properties:
 
 properties spring.datasource.url=jdbc:postgresql://localhost:5432/foro_db spring.datasource.username=tu_usuario spring.datasource.password=tu_contraseña spring.jpa.hibernate.ddl-auto=update Variables de entorno (opcional):
 
-properties JWT_SECRET=tu_clave_secreta_para_jwt JWT_EXPIRATION=86400000 # 24 horas en ms 🏗️ Estructura del Proyecto text src/ ├── main/ │ ├── java/ │ │ └── com/forochallenge/api/ │ │ ├── config/ # Configuraciones │ │ ├── controller/ # Controladores REST │ │ ├── dto/ # Objetos de transferencia │ │ ├── entity/ # Entidades de BD │ │ ├── exception/ # Manejo de errores │ │ ├── repository/ # Repositorios JPA │ │ ├── security/ # Config seguridad │ │ └── service/ # Lógica de negocio │ └── resources/ │ └── application.properties 🔐 Endpoints de Autenticación Registro de usuario text POST /api/auth/register Content-Type: application/json
+properties 
+JWT_SECRET=tu_clave_secreta_para_jwt 
+JWT_EXPIRATION=86400000 #24 horas en ms 
+🏗️ Estructura del Proyecto 
+text src/ 
+├── main/ 
+│ 
+├── java/ 
+│ 
+│ 
+└── com/forochallenge/api/ 
+│ 
+│ 
+├── config/ # Configuraciones 
+│ 
+│ 
+├── controller/ # Controladores REST 
+│ 
+│ 
+├── dto/ # Objetos de transferencia 
+│ 
+│ 
+├── entity/ # Entidades de BD 
+│ 
+│ 
+├── exception/ # Manejo de errores 
+│ 
+│ 
+├── repository/ # Repositorios JPA 
+│ 
+│ 
+├── security/ # Config seguridad 
+│ 
+│ 
+└── service/ # Lógica de negocio 
+│ 
+└── resources/ 
+│ 
+└── application.properties 
+
+🔐 Endpoints de Autenticación Registro de usuario text POST 
+
+/api/auth/register Content-Type: application/json
 
 { "nombre": "Usuario Ejemplo", "email": "usuario@example.com", "password": "contraseñaSegura123" } Inicio de sesión text POST /api/auth/login Content-Type: application/json
 
